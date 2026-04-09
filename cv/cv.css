@@ -1,19 +1,9 @@
-/* CV page — extends portfolio styles.css */
-
 body.cv-page {
   --cv-accent: var(--color-accent);
-  --cv-surface: oklch(99.2% 0.008 354);
-  --cv-surface-2: oklch(97.5% 0.02 354);
-  --cv-border: oklch(88% 0.04 280);
-  --cv-text-muted: oklch(42% 0.02 280);
   --cv-radius: 12px;
   --cv-shadow: 0 4px 24px oklch(0% 0 0 / 0.06);
-  background:
-    radial-gradient(ellipse 120% 80% at 100% 0%, oklch(96% 0.06 354 / 0.45), transparent 55%),
-    radial-gradient(ellipse 90% 60% at 0% 100%, oklch(96% 0.04 200 / 0.35), transparent 50%),
-    linear-gradient(180deg, oklch(99.5% 0.01 354) 0%, oklch(98.5% 0.015 280) 100%);
   min-height: 100vh;
-  max-width: 52rem;
+  max-width: 100ch;
   padding-bottom: 3rem;
 }
 
@@ -23,7 +13,6 @@ body.cv-page {
   gap: 2.25rem;
 }
 
-/* Hero */
 .cv-hero {
   display: grid;
   gap: 1.25rem 1.75rem;
@@ -44,7 +33,7 @@ body.cv-page {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--cv-accent), oklch(75% 0.12 280));
+  background: var(--cv-accent);
   border-radius: var(--cv-radius) var(--cv-radius) 0 0;
 }
 
@@ -65,7 +54,6 @@ body.cv-page {
     grid-column: 1;
     grid-row: 2;
     margin: 0.25rem 0 0;
-    color: var(--cv-text-muted);
     font-size: 1.35rem;
     font-weight: 600;
   }
@@ -84,7 +72,7 @@ body.cv-page {
 }
 
 .cv-hero h1 {
-  font-size: clamp(1.85rem, 4vw, 2.35rem);
+  font-size: 300%;
   margin: 0;
   letter-spacing: -0.02em;
 }
@@ -92,7 +80,6 @@ body.cv-page {
 .cv-hero h2 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--cv-text-muted);
   margin: 0.35rem 0 0;
 }
 
@@ -108,10 +95,7 @@ body.cv-page {
   border-radius: 50%;
   object-fit: cover;
   aspect-ratio: 1;
-  border: 4px solid oklch(98% 0.03 354);
-  box-shadow:
-    0 8px 32px oklch(0% 0 0 / 0.12),
-    0 0 0 1px oklch(90% 0.03 354);
+  border: 4px solid oklch(90% 0.04 354);
 }
 
 .cv-lead {
@@ -130,7 +114,6 @@ body.cv-page {
   font-size: 1.05rem;
 }
 
-/* Sections */
 .cv-section {
   background: var(--cv-surface);
   border-radius: var(--cv-radius);
@@ -154,7 +137,7 @@ body.cv-page {
   content: "";
   width: 4px;
   height: 1.1em;
-  background: linear-gradient(180deg, var(--cv-accent), oklch(72% 0.1 300));
+  background: var(--cv-accent);
   border-radius: 2px;
   flex-shrink: 0;
 }
@@ -168,7 +151,6 @@ body.cv-page {
   border-left: 3px solid oklch(90% 0.04 354);
   padding-left: 1rem;
   margin-left: 0.15rem;
-  background: linear-gradient(90deg, var(--cv-surface-2), transparent 40%);
   border-radius: 0 8px 8px 0;
 }
 
@@ -214,18 +196,15 @@ body.cv-page {
   box-shadow: 0 2px 8px oklch(0% 0 0 / 0.08);
 }
 
-/* Education: clear floats after header */
 .cv-section article header::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Additional: skill rows */
 .cv-section:last-of-type p {
   margin: 0 0 0.85rem;
   padding: 0.65rem 0.85rem;
-  background: var(--cv-surface-2);
   border-radius: 8px;
   border: 1px solid oklch(92% 0.02 280);
   font-size: 0.95rem;

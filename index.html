@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./styles.css">
     <title>Elyse Wong: Personal site and Portfolio</title>
 </head>
-<body>
+<body class="home-page">
     <nav class="navbar">
         <a href="./index.html" class="current">Home</a>
         <a href="./projects/index.html">Projects</a>
@@ -14,8 +14,22 @@
         <a href="https://github.com/elysewong" target="_blank">Github</a>
         <a href="./contact/index.html">Contact</a>
     </nav>
-    <h1>Elyse Wong</h1>
-    <p>Hello! This is my test for Lab 1!</p>
-    <img src= "images/cat.jpg" alt = "Look at this cute cat!"/>
+    <main class="home-main">
+        <header class="home-hero">
+            <h1>Elyse Wong</h1>
+            <p class="home-tagline">Data Science &amp; Business Economics — UC San Diego</p>
+            <p class="home-lead">Hello! This portfolio pulls together my work in one place: a bit of story below, links to fun projects, my resume/CV, and a way to reach me!</p>
+        </header>
+
+        <section class="home-about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About</h2>
+            <p> I'm Elyse, a second year studying Data Science at UC San Diego! I'm interested in studying the intersections of technology and economics, as well as how data shapes human cognition. With my current academic courses and experience, I've built a foundation in data analysis and extraction, using Python-based software tools. I'm eager to learn new technologies, collaborate with diverse teams, and take on complex projects! </p>
+            <p> In my free time, I enjoy dancing, singing, and exploring nature! </p>
+        </section>
+
+        <figure class="home-cat">
+            <img src="images/cat.jpg" alt="Cute Cat Photo!">
+        </figure>
+    </main>
 </body>
 </html>

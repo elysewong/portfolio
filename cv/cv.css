@@ -1,0 +1,259 @@
+/* CV page — extends portfolio styles.css */
+
+body.cv-page {
+  --cv-accent: var(--color-accent);
+  --cv-surface: oklch(99.2% 0.008 354);
+  --cv-surface-2: oklch(97.5% 0.02 354);
+  --cv-border: oklch(88% 0.04 280);
+  --cv-text-muted: oklch(42% 0.02 280);
+  --cv-radius: 12px;
+  --cv-shadow: 0 4px 24px oklch(0% 0 0 / 0.06);
+  background:
+    radial-gradient(ellipse 120% 80% at 100% 0%, oklch(96% 0.06 354 / 0.45), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 0% 100%, oklch(96% 0.04 200 / 0.35), transparent 50%),
+    linear-gradient(180deg, oklch(99.5% 0.01 354) 0%, oklch(98.5% 0.015 280) 100%);
+  min-height: 100vh;
+  max-width: 52rem;
+  padding-bottom: 3rem;
+}
+
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+/* Hero */
+.cv-hero {
+  display: grid;
+  gap: 1.25rem 1.75rem;
+  align-items: start;
+  padding: 1.75rem 1.5rem;
+  background: var(--cv-surface);
+  border-radius: var(--cv-radius);
+  box-shadow: var(--cv-shadow);
+  border: 1px solid oklch(92% 0.02 280);
+  position: relative;
+  overflow: hidden;
+}
+
+.cv-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--cv-accent), oklch(75% 0.12 280));
+  border-radius: var(--cv-radius) var(--cv-radius) 0 0;
+}
+
+@media (min-width: 640px) {
+  .cv-hero {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto 1fr;
+    padding: 2rem 2rem;
+  }
+
+  .cv-hero h1 {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .cv-hero h2 {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0.25rem 0 0;
+    color: var(--cv-text-muted);
+    font-size: 1.35rem;
+    font-weight: 600;
+  }
+
+  .cv-hero .cv-photo {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    margin: 0;
+  }
+
+  .cv-hero .cv-lead {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 0.75rem;
+  }
+}
+
+.cv-hero h1 {
+  font-size: clamp(1.85rem, 4vw, 2.35rem);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.cv-hero h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--cv-text-muted);
+  margin: 0.35rem 0 0;
+}
+
+.cv-photo {
+  margin: 0;
+  justify-self: center;
+}
+
+.cv-photo img {
+  display: block;
+  width: min(220px, 72vw);
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1;
+  border: 4px solid oklch(98% 0.03 354);
+  box-shadow:
+    0 8px 32px oklch(0% 0 0 / 0.12),
+    0 0 0 1px oklch(90% 0.03 354);
+}
+
+.cv-lead {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cv-lead p {
+  margin: 0;
+  max-width: 52ch;
+  color: oklch(28% 0.02 280);
+}
+
+.cv-lead p:first-of-type {
+  font-size: 1.05rem;
+}
+
+/* Sections */
+.cv-section {
+  background: var(--cv-surface);
+  border-radius: var(--cv-radius);
+  padding: 1.35rem 1.35rem 1.5rem;
+  border: 1px solid oklch(92% 0.02 280);
+  box-shadow: 0 2px 12px oklch(0% 0 0 / 0.04);
+}
+
+.cv-section > h3 {
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: oklch(35% 0.04 320);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.cv-section > h3::before {
+  content: "";
+  width: 4px;
+  height: 1.1em;
+  background: linear-gradient(180deg, var(--cv-accent), oklch(72% 0.1 300));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.cv-section > hr {
+  display: none;
+}
+
+.cv-section article {
+  padding: 1rem 0 1.15rem;
+  border-left: 3px solid oklch(90% 0.04 354);
+  padding-left: 1rem;
+  margin-left: 0.15rem;
+  background: linear-gradient(90deg, var(--cv-surface-2), transparent 40%);
+  border-radius: 0 8px 8px 0;
+}
+
+.cv-section article + article {
+  margin-top: 0.35rem;
+  border-top: 1px dashed oklch(90% 0.02 280);
+  border-left: 3px solid oklch(90% 0.04 354);
+  padding-top: 1.15rem;
+}
+
+.cv-section article header {
+  margin-bottom: 0.5rem;
+}
+
+.cv-section article header h4 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+}
+
+.cv-section article header p {
+  margin: 0.15rem 0;
+  color: var(--cv-text-muted);
+  font-size: 0.95rem;
+}
+
+.cv-section article header time {
+  font-variant-numeric: tabular-nums;
+}
+
+.cv-section article ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.cv-section article li {
+  margin-bottom: 0.35rem;
+}
+
+.cv-section article header .wrap-image {
+  float: left;
+  margin: 0 0.75rem 0.5rem 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px oklch(0% 0 0 / 0.08);
+}
+
+/* Education: clear floats after header */
+.cv-section article header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Additional: skill rows */
+.cv-section:last-of-type p {
+  margin: 0 0 0.85rem;
+  padding: 0.65rem 0.85rem;
+  background: var(--cv-surface-2);
+  border-radius: 8px;
+  border: 1px solid oklch(92% 0.02 280);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.cv-section:last-of-type p:last-child {
+  margin-bottom: 0;
+}
+
+.cv-section:last-of-type b {
+  color: oklch(32% 0.05 320);
+  font-weight: 650;
+}
+
+@media print {
+  body.cv-page {
+    background: white;
+  }
+
+  .cv-hero,
+  .cv-section {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .navbar a:hover {
+    border-bottom-width: 1px;
+    background: none;
+  }
+}

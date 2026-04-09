@@ -95,3 +95,67 @@ h6 {
 h1 {
   font-size: 300%;
 }
+
+/* Home page */
+
+body.home-page {
+  min-height: 100vh;
+}
+.home-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0.5rem;
+}
+.home-hero {
+  width: 100%;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid oklch(88% 0.03 280);
+}
+.home-hero h1 {
+  margin: 0 0 0.5rem;
+}
+.home-tagline {
+  margin: 0 0 1rem;
+  font-size: 1.12rem;
+  font-weight: 650;
+  text-wrap: balance;
+  max-width: 100 ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-lead {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+.home-lead + .home-lead {
+  margin-top: 0.85rem;
+}
+.home-about {
+  width: 100%;
+  border: 1px solid oklch(92% 0.02 280);
+  border-radius: 14px;
+  padding: 1.25rem 2rem;
+  box-shadow: 0 2px 16px oklch(0% 0 0 / 0.045);
+  box-sizing: border-box;
+  max-width: 100 ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-about p {
+  margin: 0;
+  max-width: 100 ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-about p + p {
+  margin-top: 0.75rem;
+}

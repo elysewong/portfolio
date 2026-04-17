@@ -14,12 +14,12 @@ body {
   padding: 3%
 }
 
-.navbar {
+nav {
     display: flex;
     margin-bottom: 1%;
 }
 
-.navbar a {
+nav a {
     flex: 1;
     text-decoration: none;
     color: inherit;
@@ -30,12 +30,12 @@ body {
     border-bottom-color: oklch(80% 3% 200);
 }
 
-.navbar a:hover {
+nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   background-color: oklch(from var(--color-accent) 95% 5% h)
 }
 
-.navbar a.current {
+nav a.current {
     font-weight: bold;
     text-decoration: none;
     border-bottom-width: 0.4em;

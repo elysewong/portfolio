@@ -107,7 +107,7 @@ body.cv-page {
 .cv-lead p {
   margin: 0;
   max-width: 52ch;
-  color: oklch(28% 0.02 280);
+  color: canvastext;
 }
 
 .cv-lead p:first-of-type {
@@ -127,7 +127,7 @@ body.cv-page {
   font-size: 1.15rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: oklch(35% 0.04 320);
+  color: canvastext;
   display: flex;
   align-items: center;
   gap: 0.65rem;
@@ -216,6 +216,6 @@ body.cv-page {
 }
 
 .cv-section:last-of-type b {
-  color: oklch(32% 0.05 320);
+  color: canvastext;
   font-weight: 650;
 }

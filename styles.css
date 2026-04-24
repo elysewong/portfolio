@@ -91,12 +91,14 @@ textarea {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+article {
+  display: grid;
   grid-template-rows: subgrid;
   grid-row: span 3;
-  gap: 1em;
-  min-width: 15em;
-  max-width: 1fr;
 }
 
 .projects h2 {

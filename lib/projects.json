@@ -15,7 +15,7 @@
         "title": "Recipes Analysis Dashboard",
         "year": "2025",
         "image": "../images/recipes.png",
-        "description": "Deserunt quidem doloremque ex ipsum? Architecto iusto id suscipit tenetur molestias ratione odit commodi voluptatum laborum, adipisci, ipsam quidem. Unde provident explicabo nihil culpa hic minus consectetur, enim velit reiciendis!"
+        "description": "Built an interactive dashboard to analyze recipe nutrition and ingredient patterns, using JavaScript and data visualization to help users compare food trends and meal ideas."
     },
     {
         "title": "Internship Slackbot",

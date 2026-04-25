@@ -95,11 +95,18 @@ export async function fetchJSON(url) {
 
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
   containerElement.innerHTML = '';
+
+  const isHomePage = location.pathname.endsWith('/index.html') || location.pathname === '/' || location.pathname.endsWith('/portfolio/');
+
   for (let p of project) {
+    const imagePath = isHomePage
+      ? p.image.replace(/^\.\.\//, '')
+      : p.image;
+
     const article = document.createElement('article');
     article.innerHTML = `
       <${headingLevel}>${p.title}</${headingLevel}>
-      <img src="${p.image}" alt="${p.title}">
+      <img src="${imagePath}" alt="${p.title}">
       <p>${p.description}</p>
   `;
     containerElement.appendChild(article);

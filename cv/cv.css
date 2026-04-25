@@ -162,6 +162,9 @@ body.cv-page {
 }
 
 .cv-section article header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -180,6 +183,16 @@ body.cv-page {
   font-variant-numeric: tabular-nums;
 }
 
+.cv-section article header .wrap-image {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px oklch(0% 0 0 / 0.08);
+  margin: 0;
+}
+
 .cv-section article ul {
   margin: 0.5rem 0 0;
   padding-left: 1.15rem;
@@ -187,19 +200,6 @@ body.cv-page {
 
 .cv-section article li {
   margin-bottom: 0.35rem;
-}
-
-.cv-section article header .wrap-image {
-  float: left;
-  margin: 0 0.75rem 0.5rem 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px oklch(0% 0 0 / 0.08);
-}
-
-.cv-section article header::after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .cv-section:last-of-type p {

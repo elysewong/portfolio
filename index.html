@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="./global.js"></script>
+    <script src="index.js" type="module" defer></script>
     <link rel="stylesheet" href="./styles.css">
     <title>Elyse Wong: Personal site and Portfolio</title>
 </head>
@@ -22,9 +23,21 @@
             <p> In my free time, I enjoy dancing, singing, and exploring nature! </p>
         </section>
 
+        <details class="profile-stats-dropdown">
+            <summary>Profile Stats</summary>
+            <div id="profile-stats">
+                <h2>My GitHub Stats</h2>
+                <dl></dl>
+            </div>
+        </details>
+
         <figure class="home-cat">
             <img src="images/cat.jpg" alt="Cute Cat Photo!">
         </figure>
     </main>
+    <h2>Latest Projects</h2>
+    <div class="projects">
+    </div>
+
 </body>
 </html>

@@ -182,3 +182,22 @@ body.home-page {
 .home-about p + p {
   margin-top: 0.75rem;
 }
+
+#profile-stats h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+
+#profile-stats dt {
+  grid-row: 1;
+}
+
+#profile-stats dd {
+  grid-row: 2;
+}

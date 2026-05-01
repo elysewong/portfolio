@@ -102,12 +102,16 @@ export function renderProjects(project, containerElement, headingLevel = 'h2') {
     const imagePath = isHomePage
       ? p.image.replace(/^\.\.\//, '')
       : p.image;
+    const yearMarkup = p.year ? `<p class="project-year"><span aria-hidden="true">c.</span> ${p.year}</p>` : '';
 
     const article = document.createElement('article');
     article.innerHTML = `
       <${headingLevel}>${p.title}</${headingLevel}>
       <img src="${imagePath}" alt="${p.title}">
-      <p>${p.description}</p>
+      <div class="project-copy">
+        <p>${p.description}</p>
+        ${yearMarkup}
+      </div>
   `;
     containerElement.appendChild(article);
   }

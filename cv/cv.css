@@ -195,7 +195,8 @@ body.cv-page {
 
 .cv-section article ul {
   margin: 0.5rem 0 0;
-  padding-left: 1.15rem;
+  padding-left: 0;
+  list-style: none;
 }
 
 .cv-section article li {

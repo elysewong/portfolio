@@ -80,6 +80,5 @@ syncProjectsView();
 
 searchInput.addEventListener('change', (event) => {
   searchQuery = event.target.value;
-  selectedYear = null;
   syncProjectsView();
 });

@@ -140,9 +140,13 @@
       }
 
       circle {
-        transition: 200ms;
+        transition: all 200ms, r calc(var(--r) * 100ms);
         transform-origin: center;
         transform-box: fill-box;
+
+        @starting-style {
+          r: 0;
+        }
       }
 
       circle:hover {
@@ -209,11 +213,56 @@
       .language-pct {
         margin-top: 0.2rem;
       }
+
+      .commit-progress-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-bottom: 12px;
+      }
+
+      .commit-progress-row {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        width: 100%;
+      }
+
+      .commit-progress-row input[type='range'] {
+        flex: 1;
+        margin: 0;
+        accent-color: #2563eb;
+        cursor: pointer;
+      }
+
+      #commit-time {
+        align-self: flex-end;
+        margin-top: 0.25rem;
+        font-size: 0.95rem;
+        color: #111;
+      }
     </style>
   </head>
   <body>
+    <div class="commit-progress-wrapper">
+      <label class="commit-progress-row">
+        Show commits until:
+        <input type="range" id="commit-progress" min="0" max="100" value="100" />
+      </label>
+      <time id="commit-time"></time>
+    </div>
+    <dl id="files">
+      <!-- we want the following structure for each file:
+      <div>
+        <dt>
+          <code>{file.name}</code>
+        </dt>
+        <dd>{file.lines.length} lines</dd>
+      </div>
+      -->
+    </dl>
     <div id="stats"></div>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./meta.js"></script>
     <h2>Commits by time of day</h2>
     <div id="chart"></div>
     <p id="selection-count">No commits selected</p>

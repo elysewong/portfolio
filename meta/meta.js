@@ -21,7 +21,7 @@ function processCommits(data) {
 
     const ret = {
       id: commit,
-      url: 'https://github.com/YOUR_REPO/commit/' + commit,
+      url: 'https://github.com/elysewong/portfolio/commit/' + commit,
       author,
       date,
       time,

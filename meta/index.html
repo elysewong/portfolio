@@ -19,6 +19,7 @@
         border: 1px solid #d2d2d2;
         background: #f2f2f2;
         padding: 10px 14px 14px;
+        margin-bottom: 2rem;
       }
 
       .summary h2 {
@@ -52,7 +53,7 @@
       }
 
       #chart {
-        margin-top: 12px;
+        margin-top: 1.5rem;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
@@ -214,62 +215,20 @@
         margin-top: 0.2rem;
       }
 
-      .commit-progress-wrapper {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        margin-bottom: 12px;
-      }
-
-      .commit-progress-row {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        width: 100%;
-      }
-
-      .commit-progress-row input[type='range'] {
-        flex: 1;
-        margin: 0;
-        accent-color: #2563eb;
-        cursor: pointer;
-      }
-
-      #commit-time {
-        align-self: flex-end;
-        margin-top: 0.25rem;
-        font-size: 0.95rem;
-        color: #111;
-      }
     </style>
   </head>
   <body>
-    <div class="commit-progress-wrapper">
-      <label class="commit-progress-row">
-        Show commits until:
-        <input type="range" id="commit-progress" min="0" max="100" value="100" />
-      </label>
-      <time id="commit-time"></time>
-    </div>
-    <dl id="files">
-      <!-- we want the following structure for each file:
-      <div>
-        <dt>
-          <code>{file.name}</code>
-          <small>{file.lines.length} lines</small>
-        </dt>
-        <dd>
-          <div class="loc"></div>
-        </dd>
-      </div>
-      -->
-    </dl>
     <div id="stats"></div>
     <script type="module" src="./meta.js"></script>
-    <h2>Commits by time of day</h2>
-    <div id="chart"></div>
-    <p id="selection-count">No commits selected</p>
-    <div id="language-breakdown" class="language-breakdown" aria-live="polite"></div>
+    <div id="scrolly-1">
+      <div id="scatter-story"></div>
+      <div id="scatter-plot">
+        <h2>Commits by time of day</h2>
+        <div id="chart"></div>
+        <p id="selection-count">No commits selected</p>
+        <div id="language-breakdown" class="language-breakdown" aria-live="polite"></div>
+      </div>
+    </div>
     <dl id="commit-tooltip" class="info tooltip" hidden>
       <dt>Commit</dt>
       <dd>
@@ -281,6 +240,12 @@
 
       <!-- Add: Time, author, lines edited -->
     </dl>
-      
+
+    <div id="scrolly-2">
+      <div id="files-viz">
+        <dl id="files"></dl>
+      </div>
+      <div id="files-story"></div>
+    </div>
   </body>
 </html>

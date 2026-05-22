@@ -304,6 +304,67 @@ body.home-page {
   grid-row: 2;
 }
 
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+#scrolly-1 > * {
+  flex: 1;
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-story .step {
+  padding-bottom: 2rem;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+  padding-top: 1.5rem;
+  box-sizing: border-box;
+}
+
+#scatter-plot h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+#scrolly-2 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+}
+
+#scrolly-2 > * {
+  flex: 1;
+}
+
+#files-viz {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+  overflow: auto;
+}
+
+#files-story {
+  position: relative;
+}
+
+#files-story .step {
+  padding-bottom: 2rem;
+}
+
 #files {
   display: grid;
   grid-template-columns: 1fr 4fr;

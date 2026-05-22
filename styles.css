@@ -327,7 +327,8 @@ body.home-page {
   top: 0;
   left: 0;
   bottom: auto;
-  height: 50vh;
+  height: 100vh;
+  overflow: hidden;
   padding-top: 1.5rem;
   box-sizing: border-box;
 }
@@ -353,8 +354,8 @@ body.home-page {
   top: 0;
   left: 0;
   bottom: auto;
-  height: 50vh;
-  overflow: auto;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #files-story {

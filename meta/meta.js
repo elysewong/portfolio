@@ -376,12 +376,15 @@ let commitMaxTime = timeScale.invert(commitProgress);
 let filteredCommits = commits;
 
 function updateFileDisplay(filteredCommits) {
+  let colors = d3.scaleOrdinal(d3.schemeTableau10);
+
   const lines = filteredCommits.flatMap((d) => d.lines);
   const files = d3
     .groups(lines, (d) => d.file)
     .map(([name, lines]) => {
       return { name, lines };
-    });
+    })
+    .sort((a, b) => b.lines.length - a.lines.length);
 
   const filesContainer = d3
     .select('#files')
@@ -389,13 +392,24 @@ function updateFileDisplay(filteredCommits) {
     .data(files, (d) => d.name)
     .join((enter) =>
       enter.append('div').call((div) => {
-        div.append('dt').append('code');
+        div.append('dt').call((dt) => {
+          dt.append('code');
+          dt.append('small');
+        });
         div.append('dd');
       }),
     );
 
-  filesContainer.select('dt > code').text((d) => d.name);
-  filesContainer.select('dd').text((d) => `${d.lines.length} lines`);
+  filesContainer.select('dt > code').html((d) => d.name);
+  filesContainer.select('dt > small').html((d) => `${d.lines.length} lines`);
+
+  filesContainer
+    .select('dd')
+    .selectAll('div')
+    .data((d) => d.lines)
+    .join('div')
+    .attr('class', 'loc')
+    .attr('style', (d) => `--color: ${colors(d.type)}`);
 }
 
 function onTimeSliderChange() {
